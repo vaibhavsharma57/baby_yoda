@@ -74,6 +74,7 @@ public class Calorimeter extends Fragment  {
              BMR = (float) (((10 * weight) + (6.25 * height)) - (5 * age) -161);
             BMI = (float) (weight / (height*height*0.01*0.01));
         }
+        editor.putFloat("bmi",BMI);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {

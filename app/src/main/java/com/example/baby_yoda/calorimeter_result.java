@@ -18,7 +18,7 @@ import static android.content.Context.MODE_PRIVATE;
  * A simple {@link Fragment} subclass.
  */
 public class calorimeter_result extends Fragment {
-    TextView bmr_view, calory_need;
+    TextView bmr_view, calory_need,bmi;
     SharedPreferences pref;
 
 
@@ -34,9 +34,14 @@ public class calorimeter_result extends Fragment {
         View v = inflater.inflate(R.layout.fragment_calorimeter_result, container, false);
         bmr_view = v.findViewById(R.id.bmr_view);
         calory_need = v.findViewById(R.id.calory_need);
+        bmi = v.findViewById(R.id.bmi);
         pref = getActivity().getSharedPreferences("calorimeter", MODE_PRIVATE);
        final float bmr = pref.getFloat("bmr",0);
         final float calory = pref.getFloat("calory",0);
+        final float bmi_calculate =pref.getFloat("bmi",0);
+        bmr_view.setText(Float.toString(bmr));
+        calory_need.setText(Float.toString(calory));
+        bmi.setText(Float.toString(bmi_calculate));
 
 
         return v;
