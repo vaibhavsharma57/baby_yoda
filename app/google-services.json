@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "334935689820",
+    "firebase_url": "https://baby-yoda-16750.firebaseio.com",
+    "project_id": "baby-yoda-16750",
+    "storage_bucket": "baby-yoda-16750.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:334935689820:android:65ef0d940d47af7c797499",
+        "android_client_info": {
+          "package_name": "com.example.baby_yoda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "334935689820-tt7n7ru714f2ld216ie19812u8sr0af8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.baby_yoda",
+            "certificate_hash": "f8df73bf0291b6742a656a5a7574968abd0d7b96"
+          }
+        },
+        {
+          "client_id": "334935689820-89peog2a98sg6k2d5cfgj1eporuhsmo3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRbbqe7FfjBsAXb4eX9y6Cg8_AKXyzmz8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "334935689820-89peog2a98sg6k2d5cfgj1eporuhsmo3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
