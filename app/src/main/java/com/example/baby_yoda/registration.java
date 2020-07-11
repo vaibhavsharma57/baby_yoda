@@ -23,7 +23,6 @@ public class registration extends AppCompatActivity {
     EditText enter_user_name, enter_email, enter_password, enter_phone_number;
     private FirebaseAuth fAuth;;
     Button registerbutton;
-    private static final String TAG = "EmailPassword";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +62,8 @@ public class registration extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             Toast.makeText(registration.this,"Succesfully registered",Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(registration.this,login_page.class);
+                            startActivity(intent);
                         }
                         else {
                             Toast.makeText(registration.this,"Succesfully not registered",Toast.LENGTH_SHORT).show();

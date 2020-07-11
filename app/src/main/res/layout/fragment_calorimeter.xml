@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".Calorimeter">
 
+    <Button
+        android:id="@+id/calculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="86dp"
+        android:text="Calculate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text" />
+
     <TextView
         android:id="@+id/age"
         android:layout_width="wrap_content"
@@ -178,4 +188,5 @@ Very intense exercise: 2+ hours of elevated heart rate activity."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:visibility="invisible" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

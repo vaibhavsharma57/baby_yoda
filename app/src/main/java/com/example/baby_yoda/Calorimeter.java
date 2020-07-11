@@ -5,12 +5,15 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
@@ -24,6 +27,7 @@ public class Calorimeter extends Fragment  {
     RadioButton male_radio_button,female_radio_button;
     EditText age,height,weight,position;
     SharedPreferences pref;
+    Button calculate;
     SharedPreferences.Editor editor;
     float BMR,BMI ;
 
@@ -36,14 +40,15 @@ public class Calorimeter extends Fragment  {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v=inflater.inflate(R.layout.fragment_calorimeter, container, false);
-        male_radio_button = v.findViewById(R.id.male_radio_button);
-        female_radio_button = v.findViewById(R.id.female_radio_button);
-        age = v.findViewById(R.id.enter_age);
-        position = v.findViewById(R.id.position);
-        height = v.findViewById(R.id.enter_height);
-        weight = v.findViewById(R.id.enter_weight);
-        Spinner spinner = v.findViewById(R.id.activity_spinner);
+        View view=inflater.inflate(R.layout.fragment_calorimeter, container, false);
+        male_radio_button = view.findViewById(R.id.male_radio_button);
+        female_radio_button = view.findViewById(R.id.female_radio_button);
+        age = view.findViewById(R.id.enter_age);
+        calculate = view.findViewById(R.id.calculate);
+        position = view.findViewById(R.id.position);
+        height = view.findViewById(R.id.enter_height);
+        weight = view.findViewById(R.id.enter_weight);
+        Spinner spinner = view.findViewById(R.id.activity_spinner);
          pref = getActivity().getSharedPreferences("calorimeter", Context.MODE_PRIVATE);
         editor = pref.edit();
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),R.array.activities,android.R.layout.simple_spinner_item);
@@ -107,9 +112,12 @@ public class Calorimeter extends Fragment  {
             editor.putFloat("calory", (float) (BMR*1.9));
         }
         editor.apply();
+        calculate.setOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(R.id.action_calorimeter_to_calorimeter_result);
+        });
 
 
-                return v;
+                return view;
     }
 
 

@@ -48,7 +48,8 @@ EditText exercises;
         exercise3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String third = ""
+                String third = String.format("Rest your left hand in your lap and raise your right hand. Then, rest the pointer    and middle fingers of your right hand on your forehead, in between the eyebrows. Close your eyes, inhaling and exhaling through your nose.\n\nUse your right thumb to close the right-hand nostril and inhale slowly through the left.\nPinch your nose closed between your right thumb and ring finger, holding the breath in for a moment.\nUse your right ring finger to close your left nostril and exhale through the right, waiting for a moment before you inhale again.\nInhale slowly through the right nostril.\nPinch your nose closed again, pausing for a moment.\nNow, open the left side and exhale, waiting a moment before you inhale again.\nRepeat this cycle of inhaling and exhaling through either nostril up to 10 times. Each cycle should take up to 40 seconds.\n");
+                exercises.setText(third);
             }
         });
 
