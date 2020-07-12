@@ -21,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 
 /**
@@ -49,7 +50,6 @@ public class Account extends Fragment {
         insert_button = view.findViewById(R.id.insert_button);
         ListView lst = view.findViewById(R.id.list_view);
         ArrayList<MydataItems> list = new ArrayList<>();
-        list.add(new MydataItems("vaibhav","988787687"));
         MyArrayAdapter adapter = new MyArrayAdapter(getActivity(),R.layout.list_view_for_account,list);
         lst.setAdapter(adapter);
         user_name = view.findViewById(R.id.user_name);
@@ -60,12 +60,17 @@ public class Account extends Fragment {
         insert_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                getValues();
+                ref.child(enter_emergency_name.getText().toString()).setValue(database_model);
+                Toast.makeText(getActivity(),"Data inserted",Toast.LENGTH_SHORT).show();
                 ref.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        getValues();
-                        ref.child(enter_emergency_name.getText().toString()).setValue(database_model);
-                        Toast.makeText(getActivity(),"Data inserted",Toast.LENGTH_SHORT).show();
+                        Map<String,String>  map = snapshot.getValue(Map.class);
+                        String name = map.get("name");
+                        String contact = map.get("contact");
+                        list.add(new MydataItems(name,contact));
+
 
                     }
 
