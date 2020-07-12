@@ -62,11 +62,11 @@ public class registration extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             Toast.makeText(registration.this,"Succesfully registered",Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(registration.this,login_page.class);
+                            Intent intent = new Intent(getApplicationContext(),login_page.class);
                             startActivity(intent);
                         }
                         else {
-                            Toast.makeText(registration.this,"Succesfully not registered",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(registration.this,"Successfully not registered",Toast.LENGTH_SHORT).show();
 
                         }
 
